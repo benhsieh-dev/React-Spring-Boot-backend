@@ -12,9 +12,26 @@ public class Drink {
     @GeneratedValue
     private Long id;
     private String name;
+    private String category;
+    private String subcategory;
     private BigDecimal price;
     private String imageUrl;
 
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
+    }
+
+    public String getSubcategory() {
+        return subcategory;
+    }
+
+    public void setSubcategory(String subcategory) {
+        this.subcategory = subcategory;
+    }
 
     public Long getId() {
         return id;
