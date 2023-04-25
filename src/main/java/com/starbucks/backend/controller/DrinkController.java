@@ -1,5 +1,6 @@
 package com.starbucks.backend.controller;
 
+import com.starbucks.backend.exception.MenuItemNotFoundException;
 import com.starbucks.backend.model.Drink;
 import com.starbucks.backend.repository.DrinkRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,5 +23,11 @@ public class DrinkController {
     @GetMapping("/drinks")
     List<Drink> getAllDrinks() {
         return drinkRepository.findAll();
+    }
+
+    @GetMapping("/drink/{id}")
+    Drink getDrinkById(@PathVariable Long id) {
+        return drinkRepository.findById(id)
+                .orElseThrow(()->new MenuItemNotFoundException(id));
     }
 }
