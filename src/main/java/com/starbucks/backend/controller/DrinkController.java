@@ -43,4 +43,14 @@ public class DrinkController {
                     return drinkRepository.save(drink);
                 }).orElseThrow(()-> new MenuItemNotFoundException(id));
     }
+
+    @DeleteMapping("/drink/{id}")
+    String deleteDrinkById(@PathVariable Long id) {
+        if (!drinkRepository.existsById(id)) {
+            throw new MenuItemNotFoundException(id);
+        }
+
+        drinkRepository.deleteById(id);
+        return "Menu item id: " + id + " has been successfully deleted";
+    }
 }
