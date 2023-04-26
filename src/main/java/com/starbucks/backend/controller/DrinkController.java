@@ -30,4 +30,17 @@ public class DrinkController {
         return drinkRepository.findById(id)
                 .orElseThrow(()->new MenuItemNotFoundException(id));
     }
+
+    @PutMapping("/drink/{id}")
+    Drink updateDrinkById(@RequestBody Drink newDrink, @PathVariable Long id) {
+        return drinkRepository.findById(id)
+                .map(drink-> {
+                    drink.setName(newDrink.getName());
+                    drink.setCategory(newDrink.getCategory());
+                    drink.setSubcategory(newDrink.getSubcategory());
+                    drink.setPrice(newDrink.getPrice());
+                    drink.setImageUrl(newDrink.getImageUrl());
+                    return drinkRepository.save(drink);
+                }).orElseThrow(()-> new MenuItemNotFoundException(id));
+    }
 }
