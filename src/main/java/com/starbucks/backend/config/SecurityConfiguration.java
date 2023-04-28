@@ -34,4 +34,10 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 //        http.authorizeRequests().anyRequest().authenticated();
 //        http.formLogin();
     }
+
+    @Bean
+    public PasswordEncoder passwordEncoder()
+    {
+        return new BCryptPasswordEncoder();
+    }
 }
