@@ -1,6 +1,12 @@
 package com.starbucks.backend.entity;
 
-import javax.persistence.*;
+//import javax.persistence.*;
+import jakarta.persistence.*;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 
 @Entity
 @Table(name="customer")

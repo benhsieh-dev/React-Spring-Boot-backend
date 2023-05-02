@@ -2,6 +2,8 @@ package com.starbucks.backend.controller;
 
 import com.starbucks.backend.dto.CustomerDTO;
 import com.starbucks.backend.dto.LoginDTO;
+import com.starbucks.backend.entity.Customer;
+import com.starbucks.backend.repository.CustomerRepository;
 import com.starbucks.backend.response.LoginResponse;
 //import com.starbucks.backend.payloadresponse.LoginMessage;
 import com.starbucks.backend.service.CustomerService;
@@ -9,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 
 
 @RestController
@@ -32,4 +35,5 @@ public class CustomerController {
         LoginResponse loginResponse = customerService.loginCustomer(loginDTO);
         return ResponseEntity.ok(loginResponse);
     }
+
 }
