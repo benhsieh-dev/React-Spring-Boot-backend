@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 @EnableWebSecurity
 public class SecurityConfiguration {
 //    public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
-//      private final UserAuthenticationEntryPoint userAuthenticationEntryPoint;
+      private final UserAuthenticationEntryPoint userAuthenticationEntryPoint;
 
 //    @Override
 //    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
