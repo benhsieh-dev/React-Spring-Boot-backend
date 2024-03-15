@@ -16,6 +16,6 @@ public class UserAuthenticationEntryPoint implements AuthenticationEntryPoint {
 
     @Override
     public void commence(HttpServletRequest request, HttpServletResponse response, AuthenticationException authException) throws IOException, ServletException {
-
+        response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
     }
 }
