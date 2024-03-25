@@ -30,7 +30,7 @@ public class SecurityConfiguration {
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
-
+    private final UserAuthProvider userAuthProvider;
 
 
 //    @Override
@@ -42,7 +42,7 @@ public class SecurityConfiguration {
         http
 //                .exceptionHandling().authenticationEntryPoint(userAuthenticationEntryPoint)
 //                .and()
-                .addFilterBefore(new JwtAuthFilter(), BasicAuthenticationFilter.class)
+                .addFilterBefore(new JwtAuthFilter(userAuthProvider), BasicAuthenticationFilter.class)
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
 //                .and()
 //                .authorizeHttpRequests((requests) -> requests
