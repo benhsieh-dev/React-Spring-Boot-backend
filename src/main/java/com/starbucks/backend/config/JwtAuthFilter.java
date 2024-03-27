@@ -28,7 +28,7 @@ public class JwtAuthFilter extends OncePerRequestFilter {
             if (elements.length == 2 && "Bearer".equals(elements[0])) {
                 try {
                     SecurityContextHolder.getContext().setAuthentication(
-                            userAuthProvider.validateToken(elements[1]);
+                            userAuthProvider.validateToken(elements[1])
                     );
                 } catch (RuntimeException e) {
                     SecurityContextHolder.clearContext();
