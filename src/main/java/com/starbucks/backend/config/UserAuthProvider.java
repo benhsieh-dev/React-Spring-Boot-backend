@@ -23,6 +23,8 @@ public class UserAuthProvider {
     @Value("${security.jwt.token.secret-key:secret-value")
     private String secretKey;
 
+    private final UserService userService;
+
     @PostConstruct
     protected void init() {
         secretKey = Base64.getEncoder().encodeToString(secretKey.getBytes());
