@@ -2,7 +2,6 @@ package com.starbucks.backend.services;
 
 import com.starbucks.backend.dto.UserDto;
 import com.starbucks.backend.exceptions.AppException;
-import com.starbucks.backend.re.UserRepository;
 import com.starbucks.backend.repositories.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;

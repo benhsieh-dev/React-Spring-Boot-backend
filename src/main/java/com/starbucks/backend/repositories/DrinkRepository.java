@@ -1,4 +1,4 @@
-package com.starbucks.backend.repository;
+package com.starbucks.backend.repositories;
 
 import com.starbucks.backend.model.Drink;
 import org.springframework.data.jpa.repository.JpaRepository;
