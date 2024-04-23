@@ -1,5 +1,6 @@
 package com.starbucks.backend.services;
 
+import com.starbucks.backend.dto.CredentialsDto;
 import com.starbucks.backend.dto.UserDto;
 import com.starbucks.backend.entities.User;
 import com.starbucks.backend.exceptions.AppException;
@@ -20,5 +21,9 @@ public class UserService {
         User user = userRepository.findByLogin(login)
                 .orElseThrow( ()-> new AppException("Unknown user", HttpStatus.NOT_FOUND));
         return userMapper.toUserDto(user);
+    }
+
+    public userDto login(CredentialsDto credentialsDto) {
+
     }
 }
