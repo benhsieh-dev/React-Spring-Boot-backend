@@ -8,6 +8,7 @@ import com.starbucks.backend.mappers.UserMapper;
 import com.starbucks.backend.repositories.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 @RequiredArgsConstructor
@@ -16,6 +17,7 @@ public class UserService {
 
     private final UserRepository userRepository;
     private final UserMapper userMapper;
+    private final PasswordEncoder passwordEncoder;
 
     public UserDto fingByLogin(String login) {
         User user = userRepository.findByLogin(login)
@@ -23,7 +25,9 @@ public class UserService {
         return userMapper.toUserDto(user);
     }
 
-    public userDto login(CredentialsDto credentialsDto) {
+    public UserDto login(CredentialsDto credentialsDto) {
+        User user = userRepository.findByLogin(credentialsDto.getLogin())
+                .orElseThrow( ()-> new AppException("Unknown user", HttpStatus.NOT_FOUND));
 
     }
 }
