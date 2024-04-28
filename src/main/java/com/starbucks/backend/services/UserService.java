@@ -1,6 +1,7 @@
 package com.starbucks.backend.services;
 
 import com.starbucks.backend.dto.CredentialsDto;
+import com.starbucks.backend.dto.SignUpDto;
 import com.starbucks.backend.dto.UserDto;
 import com.starbucks.backend.entities.User;
 import com.starbucks.backend.exceptions.AppException;
@@ -34,5 +35,9 @@ public class UserService {
             return userMapper.toUserDto(user);
         }
         throw new AppException("Invalid password", HttpStatus.BAD_REQUEST);
+    }
+
+    public UserDto register(SignUpDto userDto) {
+
     }
 }
