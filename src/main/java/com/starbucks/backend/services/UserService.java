@@ -13,6 +13,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.nio.CharBuffer;
+import java.util.Optional;
 
 @RequiredArgsConstructor
 @Service
@@ -38,6 +39,10 @@ public class UserService {
     }
 
     public UserDto register(SignUpDto userDto) {
-
+        Optional<User> optionalUser = userRepository.findByLogin(userDto.getLogin());
+        if (optionalUser.isPresent()) {
+            throw new AppException("Login already exists", HttpStatus.BAD_REQUEST);
+        }
+        User user = userMapper.signUpToUser(userDto);
     }
 }
