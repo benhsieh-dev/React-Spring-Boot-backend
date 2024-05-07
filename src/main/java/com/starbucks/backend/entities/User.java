@@ -1,5 +1,7 @@
 package com.starbucks.backend.entities;
 
+import jakarta.persistence.Table;
+import jakarta.persistence.Column;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -9,12 +11,18 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Builder
 @Data
+@Table(name="app_user")
 public class User {
 
     private Long id;
+    @Column(name="first_name")
     private String firstName;
+
+    @Column(name="last_name")
     private String lastName;
+
     private String login;
-    private char[] password;
+
+    private String password;
 
 }
