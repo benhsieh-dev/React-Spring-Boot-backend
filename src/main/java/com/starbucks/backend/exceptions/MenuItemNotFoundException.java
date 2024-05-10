@@ -1,4 +1,4 @@
-package com.starbucks.backend.exception;
+package com.starbucks.backend.exceptions;
 
 public class MenuItemNotFoundException extends RuntimeException {
 

@@ -1,6 +1,6 @@
 package com.starbucks.backend.controller;
 
-import com.starbucks.backend.exception.MenuItemNotFoundException;
+import com.starbucks.backend.exceptions.MenuItemNotFoundException;
 import com.starbucks.backend.model.Drink;
 import com.starbucks.backend.repositories.DrinkRepository;
 import org.springframework.beans.factory.annotation.Autowired;

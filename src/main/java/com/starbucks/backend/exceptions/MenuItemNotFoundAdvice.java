@@ -1,4 +1,4 @@
-package com.starbucks.backend.exception;
+package com.starbucks.backend.exceptions;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ControllerAdvice;
