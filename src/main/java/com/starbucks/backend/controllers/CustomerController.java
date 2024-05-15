@@ -1,4 +1,4 @@
-package com.starbucks.backend.controller;
+package com.starbucks.backend.controllers;
 
 import com.starbucks.backend.dto.CustomerDTO;
 import com.starbucks.backend.dto.LoginDTO;

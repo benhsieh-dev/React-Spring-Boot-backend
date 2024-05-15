@@ -1,4 +1,4 @@
-package com.starbucks.backend.controller;
+package com.starbucks.backend.controllers;
 
 import com.starbucks.backend.exceptions.MenuItemNotFoundException;
 import com.starbucks.backend.model.Drink;
