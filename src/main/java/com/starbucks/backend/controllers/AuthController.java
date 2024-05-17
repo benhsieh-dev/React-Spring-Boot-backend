@@ -2,13 +2,17 @@ package com.starbucks.backend.controllers;
 
 import com.starbucks.backend.config.UserAuthProvider;
 import com.starbucks.backend.dto.CredentialsDto;
+import com.starbucks.backend.dto.SignUpDto;
 import com.starbucks.backend.dto.UserDto;
 import com.starbucks.backend.services.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.net.URI;
 
 @RequiredArgsConstructor
 @RestController
@@ -23,5 +27,13 @@ public class AuthController {
 
         user.setToken(userAuthProvider.createToken(user.getLogin()));
         return ResponseEntity.ok(user);
+    }
+
+    @PostMapping("/register")
+    public ResponseEntity<UserDto> register(@RequestBody SignUpDto signUpDto) {
+        UserDto user = userService.register(signUpDto);
+        user.setToken(userAuthProvider.createToken(user.getLogin()));
+        return ResponseEntity.created(URI.create("/users" + user.getId()))
+                .body(user);
     }
 }
