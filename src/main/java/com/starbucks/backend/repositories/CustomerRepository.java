@@ -1,6 +1,6 @@
 package com.starbucks.backend.repositories;
 
-import com.starbucks.backend.entity.Customer;
+import com.starbucks.backend.entities.Customer;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.stereotype.Repository;

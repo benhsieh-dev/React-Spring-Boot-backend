@@ -1,4 +1,4 @@
-package com.starbucks.backend.entity;
+package com.starbucks.backend.entities;
 
 //import javax.persistence.*;
 import jakarta.persistence.*;
