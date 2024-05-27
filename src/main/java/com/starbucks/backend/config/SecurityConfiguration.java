@@ -42,7 +42,7 @@ public class SecurityConfiguration {
         http
 //                .exceptionHandling().authenticationEntryPoint(userAuthenticationEntryPoint)
 //                .and()
-                .addFilterBefore(new JwtAuthFilter(userAuthProvider), BasicAuthenticationFilter.class)
+                .addFilterBefore(new JwtAuthFilter(), BasicAuthenticationFilter.class)
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
 //                .and()
 //                .authorizeHttpRequests((requests) -> requests
