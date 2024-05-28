@@ -7,16 +7,18 @@ import com.starbucks.backend.entities.User;
 import com.starbucks.backend.exceptions.AppException;
 import com.starbucks.backend.mappers.UserMapper;
 import com.starbucks.backend.repositories.UserRepository;
+import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import java.nio.CharBuffer;
 import java.util.Optional;
 
-@RequiredArgsConstructor
 @Service
+@RequiredArgsConstructor
 public class UserService {
 
     private final UserRepository userRepository;
