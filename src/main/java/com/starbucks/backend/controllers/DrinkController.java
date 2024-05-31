@@ -16,7 +16,7 @@ public class DrinkController {
     private DrinkRepository drinkRepository;
 
     @PostMapping("/drink")
-    Drink newDrink(@RequestBody Drink newDrink) {
+    Drink   newDrink(@RequestBody Drink newDrink) {
         return drinkRepository.save(newDrink);
     }
 
