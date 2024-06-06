@@ -8,13 +8,15 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @SpringBootApplication(exclude = SecurityAutoConfiguration.class)
-@EnableJpaRepositories
-@ComponentScan(basePackages = {"com.starbucks.backend.config"})
+@EnableJpaRepositories("com.starbucks.backend.services")
+//@ComponentScan(basePackages = {"com.starbucks.backend.config"})
+//@ComponentScan("com.starbucks.backend.services")
+@ComponentScan("com.starbucks.backend.repositories")
 @EntityScan("com.starbucks.backend.*")
 public class BackendApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(BackendApplication.class, args);
 	}
-
+	
 }
