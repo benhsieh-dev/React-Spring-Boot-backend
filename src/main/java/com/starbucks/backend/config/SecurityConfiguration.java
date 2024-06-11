@@ -33,7 +33,7 @@ public class SecurityConfiguration {
 
         return   http
                 .csrf().disable()
-                .authorizeRequests().anyRequest().permitAll()
+                .authorizeHttpRequests().anyRequest().permitAll()
                 .and().build();
     }
 
