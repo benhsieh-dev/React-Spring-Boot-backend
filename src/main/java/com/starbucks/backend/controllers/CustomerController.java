@@ -9,6 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
+@CrossOrigin(origins = {"*"})
 @RequestMapping("/api/v1/customer")
 public class CustomerController {
 
@@ -22,7 +23,6 @@ public class CustomerController {
         return id;
     }
 
-    @CrossOrigin(origins="http://localhost:3000")
     @PostMapping(path="/login")
     public ResponseEntity<?> loginCustomer(@RequestBody LoginDTO loginDTO)
     {
