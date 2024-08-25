@@ -1,10 +1,5 @@
 package com.starbucks.backend.dto;
 
-//import javax.persistence.Column;
-//import javax.persistence.GeneratedValue;
-//import javax.persistence.GenerationType;
-//import javax.persistence.Id;
-
 import jakarta.persistence.Column;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -13,11 +8,16 @@ import jakarta.persistence.Id;
 
 public class CustomerDTO {
 
+    @Id
+    @Column(name="customer_id",length=45)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int customerId;
     private String firstName;
     private String lastName;
     private String email;
     private String password;
+
+
 
     public CustomerDTO(int customerId, String firstName, String lastName, String email, String password) {
         this.customerId = customerId;
