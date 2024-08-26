@@ -9,12 +9,20 @@ import jakarta.persistence.Id;
 public class CustomerDTO {
 
     @Id
-    @Column(name="customer_id",length=45)
+    @Column(name="customer_id", length=45)
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int customerId;
+
+    @Column(name="first_name")
     private String firstName;
+
+    @Column(name="last_name")
     private String lastName;
+
+    @Column(name="email")
     private String email;
+
+    @Column(name="password")
     private String password;
 
 
