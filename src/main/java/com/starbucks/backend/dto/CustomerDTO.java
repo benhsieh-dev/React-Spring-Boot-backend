@@ -25,8 +25,6 @@ public class CustomerDTO {
     @Column(name="password")
     private String password;
 
-
-
     public CustomerDTO(int customerId, String firstName, String lastName, String email, String password) {
         this.customerId = customerId;
         this.firstName = firstName;
