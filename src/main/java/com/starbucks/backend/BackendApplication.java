@@ -9,7 +9,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @SpringBootApplication(exclude = SecurityAutoConfiguration.class)
 @EnableJpaRepositories("com.starbucks.backend.services")
-@ComponentScan("com.starbucks.backend.repositories")
+@ComponentScan("com.starbucks.backend.*")
 @EntityScan("com.starbucks.backend.*")
 public class BackendApplication {
 
